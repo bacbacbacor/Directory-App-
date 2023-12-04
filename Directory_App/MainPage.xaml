@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Directory_App.MainPage"
+             Shell.NavBarIsVisible="False"
+             Title="MainPage"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="30,0" VerticalOptions="Center">
+
+            <Label Text="Student ID" FontSize="18" TextColor="Black" HorizontalOptions="Center" Padding="0,0,310,0" />
+            
+            <Border WidthRequest="400" >
+                <Entry x:Name="StudentIDFLD" TextColor="Black" Placeholder="Enter Username" PlaceholderColor="DarkGray"/>
+            </Border>
+
+            <Label Text="Password" FontSize="18" TextColor="Black" HorizontalOptions="Center"  Padding="0,0,310,0"/>
+
+            <Border WidthRequest="400" >
+                <Entry x:Name="PasswordFLD" TextColor="Black" Placeholder="Enter Password" IsPassword="True" PlaceholderColor="DarkGray" />
+            </Border>
+
+            <Button Text="Login"  TextColor="White" BackgroundColor="Blue" WidthRequest="90" CornerRadius="20" Clicked="OnClicked" />
+
+            <Label   HorizontalOptions="Center" Text="New User? Register Here." TextColor="Indigo" TextDecorations="Underline">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnHyperLink"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Label x:Name="MessageDisplay"  HorizontalOptions="Center" FontSize="16" TextColor="Black" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

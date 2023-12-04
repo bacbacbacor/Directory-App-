@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Directory_App.Register"
+             Title="Register"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="White">
+
+    <VerticalStackLayout  Padding="30,30,0,0" HorizontalOptions="Center">
+        
+        <HorizontalStackLayout>
+            <!--StudentId Textbox | Gender radio button-->
+            <Label Padding="10,40,0,0" Text="Student ID" TextColor="Black" FontSize="16" HorizontalTextAlignment="Start"/>
+            <Border WidthRequest="150" HeightRequest="39" Margin="20,34,0,0" HorizontalOptions="Start">
+                <Entry x:Name="StudentFLD" TextColor="Black" ToolTipProperties.Text="Required. Numeric values only" MaxLength="5"/>
+            </Border>
+            <HorizontalStackLayout >
+                <Label Padding="70,40,30,0" Text="Gender" TextColor="Black" FontSize="16" HorizontalTextAlignment="Start"/>
+                <RadioButton x:Name="rdoMale" Margin="0,20,0,0" Content="Male"   TextColor="Black" FontSize="15" IsChecked="False"/>
+                <RadioButton x:Name="rdoFemale" Margin="0,20,0,0" Content="Female" TextColor="Black" FontSize="15" IsChecked="False"/>
+            </HorizontalStackLayout>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <!-- FirstName Textbox | Birthdate picker-->
+            <Label Padding="10,29,0,0" Text="First Name" TextColor="Black" FontSize="16" HorizontalTextAlignment="Start"/>
+            <Border WidthRequest="150" HeightRequest="39" Margin="17,20,0,0" HorizontalOptions="Start">
+                <Entry x:Name="FirstNameFLD" TextColor="Black" ToolTipProperties.Text="Required"/>
+            </Border>
+            <HorizontalStackLayout>
+                <Label Padding="70,29,15,0" Text="Birth Date" TextColor="Black" FontSize="16" HorizontalTextAlignment="Start"/>
+                <DatePicker  x:Name="cboDate"  MinimumDate="01/01/1991" MaximumDate="12/31/2010" />
+            </HorizontalStackLayout>
+        </HorizontalStackLayout>
+            
+        <HorizontalStackLayout>
+            <!-- LastName Textbox | Mobile No Textbox-->
+            <Label Padding="10,29,0,0" Text="Last Name" TextColor="Black" FontSize="16" HorizontalTextAlignment="Start"/>
+            <Border WidthRequest="150" HeightRequest="39" Margin="19,20,0,0" HorizontalOptions="Start">
+                <Entry x:Name="LastNameFLD" TextColor="Black" ToolTipProperties.Text="Required"/>
+            </Border>
+            <HorizontalStackLayout>
+                <Label Padding="70,29,0,0" Text="Mobile No." TextColor="Black" FontSize="16" HorizontalTextAlignment="Start"/>
+                <Border WidthRequest="150" HeightRequest="39" Margin="10,16,0,0" HorizontalOptions="Start">
+                    <Entry x:Name="MobileNoFLD" TextColor="Black" ToolTipProperties.Text="Number Input Only"/>
+                </Border>
+            </HorizontalStackLayout>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <!-- Email Textbox |CityTextbox-->
+            <Label Padding="10,29,0,0" Text="Email" TextColor="Black" FontSize="16" HorizontalTextAlignment="Start"/>
+            <Border WidthRequest="150" HeightRequest="39" Margin="58,20,0,0" HorizontalOptions="Start">
+                <Entry x:Name="EmailFLD" TextColor="Black" />
+            </Border>
+            <HorizontalStackLayout>
+                <Label Padding="70,29,0,0" Text="City" TextColor="Black" FontSize="16" HorizontalTextAlignment="Start"/>
+                <Border WidthRequest="150" HeightRequest="39" Margin="63,16,0,0" HorizontalOptions="Start">
+                    <Entry x:Name="CityFLD" TextColor="Black"/>
+                </Border>
+            </HorizontalStackLayout>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <!-- Password Textbox |SchoolProg dropbox -->
+            <Label Padding="10,29,0,0" Text="Password" TextColor="Black" FontSize="16" HorizontalTextAlignment="Start"/>
+            <Border WidthRequest="150" HeightRequest="39" Margin="26,20,0,0" HorizontalOptions="Start">
+                <Entry x:Name="PasswordFLD" TextColor="Black" IsPassword="True" ToolTipProperties.Text="Required. Minimum of 8 characters."/>
+            </Border>
+            <HorizontalStackLayout>
+                <Label Padding="70,20,0,0" Text="School &#10;Program" TextColor="Black" FontSize="16" HorizontalTextAlignment="Start"/>
+                <Picker  x:Name ="cboSchoolProg" ItemDisplayBinding="{Binding SchooloF}" SelectedIndexChanged="onSelectChange" TextColor="Black" Margin="28,10,0,0"   FontSize="10" WidthRequest="150"  />
+            </HorizontalStackLayout>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <!-- ConfirmPassword Textbox |course dropbox -->
+            <Label  Padding="10,25,0,0"  Text="Confirm &#10;Password" TextColor="Black" FontSize="16" HorizontalTextAlignment="Start"/>
+            <Border WidthRequest="150" HeightRequest="39" Margin="25,20,0,0" HorizontalOptions="Start">
+                <Entry x:Name="ConfirmPasswordFLD"   TextColor="Black" IsPassword="True"/>
+            </Border>
+            <HorizontalStackLayout>
+                <Label Padding="70,29,0,0" Text="Course" TextColor="Black" FontSize="16" HorizontalTextAlignment="Start"/>
+                <Picker x:Name="cboCourse"   TextColor="Black" Margin="42,10,0,0"   FontSize="10" WidthRequest="150" />
+            </HorizontalStackLayout>
+
+        </HorizontalStackLayout>
+        
+        <HorizontalStackLayout>
+            <!-- Year Level Picker-->
+            <Label Padding="329,20,0,0" Text="Year Level" TextColor="Black" FontSize="16" HorizontalTextAlignment="Start"/>
+            <Picker  x:Name="cboYearLvl" TextColor="Black" Margin="18,10,0,0"   FontSize="10" WidthRequest="150">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>-SELECT-</x:String>
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>
+                        <x:String>3</x:String>
+                        <x:String>4</x:String>
+                        <x:String>5</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="10" Padding="0,30,0,0">
+            <Button Text="Register" BackgroundColor="Blue" TextColor="White" FontSize="18" WidthRequest="100" CornerRadius="20" Clicked="ValidateForm"/>
+            <Button Text="Reset" BackgroundColor="Gray" TextColor="White" FontSize="18" WidthRequest="100" CornerRadius="20" Clicked="ResetForm"/>
+            
+
+
+        </HorizontalStackLayout>
+        
+        
+
+    </VerticalStackLayout>
+
+    
+</ContentPage>

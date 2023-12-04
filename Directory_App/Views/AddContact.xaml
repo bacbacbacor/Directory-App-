@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Directory_App.Views.AddContact"
+             Title="AddContact"
+             Shell.NavBarIsVisible="False">
+
+    <StackLayout>
+        <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="0,50,0,0">
+            <HorizontalStackLayout VerticalOptions="Center">
+                <Label x:Name="lblType" Text="Type" FontSize="20" Margin="0,0,80,0"/>
+                <RadioButton x:Name="rdoFaculty" Content="Faculty" IsChecked="False" FontSize="15"/>
+                <RadioButton x:Name="rdoStudent" Content="Student" IsChecked="False" FontSize="15"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout VerticalOptions="Center" Margin="0,0,0,10">
+                <Label  Text="ID" FontSize="20" Margin="0,0,108,0"/>
+                <Border  Stroke="black">
+                    <Entry x:Name="txtID" WidthRequest="200" MaxLength="5" ToolTipProperties.Text="Required. Numeric values only"/>
+                </Border>
+                <HorizontalStackLayout>
+                    <Label  Text="Mobile" FontSize="20" Margin="30,0,37,0"/>
+                    <Border  Stroke="black">
+                        <Entry x:Name="txtMobile" WidthRequest="200" ToolTipProperties.Text="Required. Numeric values only"/>
+                    </Border>
+                </HorizontalStackLayout>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout VerticalOptions="Center" Margin="0,0,0,10">
+                <Label  Text="Firstname" FontSize="20" Margin="0,0,35,0"/>
+                <Border  Stroke="black">
+                    <Entry x:Name="txtFirstname" WidthRequest="200" ToolTipProperties.Text="Required"/>
+                </Border>
+                <HorizontalStackLayout>
+                    <Label  Text="School" FontSize="20" Margin="30,0,39,0"/>
+                    <Border  Stroke="black">
+                        <Picker x:Name ="cboSchoolProg" ItemDisplayBinding="{Binding SchooloF}" SelectedIndexChanged="onSelectChange" WidthRequest="200"/>
+                    </Border>
+                </HorizontalStackLayout>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout VerticalOptions="Center" Margin="0,0,0,10">
+                <Label  Text="Lastname" FontSize="20" Margin="0,0,37,0"/>
+                <Border  Stroke="black">
+                    <Entry x:Name="txtLastname"  WidthRequest="200" ToolTipProperties.Text="Required"/>
+                </Border>
+                <HorizontalStackLayout>
+                    <Label  Text="Course" FontSize="20" Margin="30,0,35,0"/>
+                    <Border   Stroke="black">
+                        <Picker  x:Name="cboCourse" WidthRequest="200"/>
+                    </Border>
+                </HorizontalStackLayout>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout VerticalOptions="Center" Margin="0,0,0,10">
+                <Label  Text="Email" FontSize="20" Margin="0,0,78,0"/>
+                <Border  Stroke="black">
+                    <Entry x:Name="txtEmail" WidthRequest="200" ToolTipProperties.Text="Required"/>
+                </Border>
+            </HorizontalStackLayout>
+
+            <VerticalStackLayout HorizontalOptions="Center" Margin="0,20,0,0">
+                <HorizontalStackLayout Spacing="20">
+                    <Button Text="Submit" FontSize="18" BorderColor="Black" BackgroundColor="Blue" WidthRequest="100" CornerRadius="20"  Clicked="ValidateForm"/>
+                    <Button Text="Reset" FontSize="18" BorderColor="Black" BackgroundColor="Grey" WidthRequest="100" CornerRadius="20" Clicked="ResetForm"/>
+                </HorizontalStackLayout> 
+            </VerticalStackLayout>
+
+
+        </VerticalStackLayout>
+
+    </StackLayout>
+    
+</ContentPage>
